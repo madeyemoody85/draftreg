@@ -8,8 +8,8 @@
    <ul>
    {% if user and not user.is_anonymous %}
     <a>Hello {{ user.get_full_name|default:user.username }}!</a>
-    <p>
-      <a>Signup for draft for Monday </a>
+    <hr>
+    <a>Signup for draft for Monday </a>
     <hr>
     <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
    {% else %}

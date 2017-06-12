@@ -2,9 +2,9 @@ from django.db import models
 from django.utils import timezone
 
 class DraftPod(models.Model):
-    pod_number = models.IntegerField
+    id = models.AutoField(primary_key=True)
     draft_date = models.DateField()
-    player_count = models.IntegerField
+    player_count = models.IntegerField(default=8)
 
 class Player(models.Model):
     first_name = models.CharField(max_length=30)
