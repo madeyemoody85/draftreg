@@ -17,3 +17,5 @@ the app will open up another pod.
 This is to just organize things, and not necessarily the od that you will play in.
 
 If you want to subit PR for this please let me know.
+
+TODO: ADD Development Setup Instructions
