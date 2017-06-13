@@ -16,5 +16,11 @@ def index(request):
     return render(request, 'signup/index.html', context)
 
 def register(request):
+    if request.method == 'POST':
+        player = request.POST.get('player_name')
+        draft_date = request.POST.get('draft_date')
+        print(player)
+        print(draft_date)
+#        latest_available_pod = DraftPod.objects.last()
     return render(request, 'signup/register.html')
 
