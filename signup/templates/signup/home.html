@@ -7,8 +7,27 @@
    <ul>
    {% if user and not user.is_anonymous %}
     <a>Hello {{ user.get_full_name|default:user.username }}!</a>
-    <hr>
-    <a href="/registration/">Signup for draft for Monday </a>
+    
+    <style>
+      .form-signin {
+        max-width: 550px;
+        padding: 15px;
+        margin: 0 auto;
+      }    
+    </style>
+
+     <div class="container text-center">
+        <form class="form-registration" id="registration_form" method="post" action="/register">
+          {% csrf_token %}
+          <br>
+          <input type="text" name="Player Name" class="form-control" placeholder="Your Name: {{ user.get_full_name}}" value="{{ user.get_full_name}}" required autofocus>
+          <br>
+          <br>Select a draft date:<br>
+          <input type="date" name="bday" min="2017-06-01" required><br><br>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up !</button>
+        </form>
+    </div>
+
     <hr>
     <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
    {% else %}

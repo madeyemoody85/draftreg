@@ -15,9 +15,6 @@ def index(request):
     }
     return render(request, 'signup/index.html', context)
 
-def registration(request):
-    return render(request, 'signup/registration.html')
-
 def register(request):
-    return HttpResponse('SUCCESS')
+    return render(request, 'signup/register.html')
 
