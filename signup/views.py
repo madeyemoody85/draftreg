@@ -14,3 +14,10 @@ def index(request):
         'all_the_pods_for_this_week' : all_the_pods_for_this_week
     }
     return render(request, 'signup/index.html', context)
+
+def registration(request):
+    return render(request, 'signup/registration.html')
+
+def register(request):
+    return HttpResponse('SUCCESS')
+

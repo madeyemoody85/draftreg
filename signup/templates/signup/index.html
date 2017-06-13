@@ -1,11 +1,7 @@
-{% if all_the_pods_for_this_week %}
-    <ul>    
-<!-- Do something about this information you have here
-    {% for draftpod in all_the_pods_for_this_week %}
-        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
-    {% endfor %} -->
-    </ul>
-{% else %}
-    <div>
-    <h1>No pod information currently available...</h1>
-{% endif %}
+{% extends 'signup/base.html' %}
+
+{% block main %}
+
+<h1>No pod information currently available...</h1>
+
+{% endblock %}

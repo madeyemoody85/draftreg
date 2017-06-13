@@ -2,14 +2,13 @@
 
 {% block main %}
  <div>
- <h1>Welcome to Monday Night Draft !</h1>
-
+ <h1 class="text-center">Welcome to Monday Night Draft !</h1>
  <p>
    <ul>
    {% if user and not user.is_anonymous %}
     <a>Hello {{ user.get_full_name|default:user.username }}!</a>
     <hr>
-    <a>Signup for draft for Monday </a>
+    <a href="/registration/">Signup for draft for Monday </a>
     <hr>
     <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
    {% else %}
