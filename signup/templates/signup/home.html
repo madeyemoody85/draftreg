@@ -2,12 +2,11 @@
 
 {% block main %}
  <div>
- <h1 class="text-center">Welcome to Monday Night Draft !</h1>
  <p>
    <ul>
    {% if user and not user.is_anonymous %}
-    <a>Hello {{ user.get_full_name|default:user.username }}!</a>
-    
+    <h1 class="text-center">Welcome {{ user.get_full_name|default:user.username }} !</h1>
+
     <style>
       .form-signin {
         max-width: 550px;
@@ -31,6 +30,7 @@
     <hr>
     <a href="{% url 'auth:logout' %}?next={{ request.path }}">Logout</a>
    {% else %}
+    <h1 class="text-center">Welcome to Monday Night Draft !</h1>
     <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
    {% endif %}
    </ul>

@@ -1,7 +1,24 @@
 {% extends 'signup/base.html' %}
 
 {% block main %}
+
+{% if all_the_pods_for_this_week %}
+    <div>
+    <h1 class="text-center">Pod Information for this week...</h1>
+    {% for pod in all_the_pods_for_this_week %}
+    <div class="container">
+    <h2 class="text-center">Pod # {{pod.id}}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+    </table>
+    </div>
+    {% end for}
+{% else %}
 <div>
 <h1 class="text-center">No pod information currently available...</h1>
-
 {% endblock %}
