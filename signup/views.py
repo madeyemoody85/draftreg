@@ -21,7 +21,8 @@ def register(request):
         date = request.POST.get('draft_date')
 
         try:
-            draft_pod = DraftPod.objects.get(draft_date=date).last()    # Get the last available for for the given date
+            # Date filter is wrong 
+            draft_pod = DraftPod.objects.filter(draft_date=date)    # Get the last available for for the given date
         except DraftPod.DoesNotExist:
             draft_pod = None       # Create a new pod if one doesn't exist
             
@@ -36,6 +37,6 @@ def register(request):
 
         player = Player(first_name=player_name[0], last_name=player_name[1], draft_pod=draft_pod)
         player.save()
-        
+
     return render(request, 'signup/register.html')
 
